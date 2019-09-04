@@ -82,9 +82,7 @@ btnStart.addEventListener("click", getDatafromServer);
 
 function getLevelFromLocalStorage() {
   const numberSelected = localStorage.getItem("numberSelected");
-  const radioToSelect = document.querySelector(
-    `input[type="radio"][value="${numberSelected}"]`
-  );
+  const radioToSelect = document.querySelector(`[value="${numberSelected}"]`);
   radioToSelect.checked = true;
 }
 getLevelFromLocalStorage();
