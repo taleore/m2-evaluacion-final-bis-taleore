@@ -1,17 +1,39 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>Adalab Web Starter Kit</title>
-  <link rel="icon" href="favicon.png"/>
-	<link rel="stylesheet" href="assets/css/main.css">
-</head>
-<body>
-  <div class="page">
-    <partial src="_header.html" label="Header"></partial>
-    <partial src="_main.html" label="Main"></partial>
-    <partial src="_link.html" aClass="link__adalab" text="Adalab" url="https://adalab.es"></partial>
-    <partial src="_link.html" aClass="link__github" text="GitHub" url="https://github.com"></partial>
-  </div>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/main.css" />
+  </head>
+  <body>
+      <section class="selectCard">
+          <h2 class="selectCard__title">Elige el número de cartas</h2>
+          <form class="selectCard-form">
+        
+            <label for="4Cards" class="selectNumber">
+              <input  class="radioNum"  type="radio" value="4" name="numberCards">
+              4
+            </label>
+            <label for="6Cards" class="selectNumber">
+              <input class="radioNum" type="radio" value="6" name="numberCards">
+              6
+            </label>
+            <label for="8Cards" class="selectNumber">
+              <input  class="radioNum" type="radio" value="8" name="numberCards">
+              8
+            </label>
+        
+          </form>
+          <input class="btn-start" type="submit" value="Comenzar">
+        </section>
+        <section class="showCards">
+            <ul class="showCards__list">
+                
+            </ul>
+            
+        </section>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+  </body>
 </html>

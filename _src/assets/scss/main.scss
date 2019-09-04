@@ -1,9 +1,76 @@
-@import 'core/settings';
-@import 'core/links';
-@import 'core/header';
+.page {
+  margin: 0;
+  height: 100vh;
+  text-align: center;
+}
 
-body {
-	background: url('../images/logo-adalab-80px.png') center center no-repeat $color-white;
-	margin: 0;
-	height: 100vh;
+.hidden {
+  display: none;
+}
+
+.showCards__list {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 45px;
+}
+
+.btn-start {
+  padding: 1% 2%;
+  margin: 4%;
+  font-size: 14px;
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.showCards {
+  height: 85%;
+  display: flex;
+  align-items: center;
+}
+
+.selectCard {
+  height: 15%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  padding: 15px;
+}
+
+.selectCard-form {
+  display: flex;
+  flex-direction: row;
+}
+
+.selectCard__title {
+  padding: 3% 0;
+  font-size: 25px;
+  text-align: center;
+  width: 100%;
+}
+
+.card__img {
+  width: 160px;
+  margin: 2%;
+  height: 195px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid grey;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.radioNum {
+  cursor: pointer;
+}
+.selectNumber {
+  font-size: 15px;
+  margin: 10px;
 }
