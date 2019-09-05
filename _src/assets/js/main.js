@@ -5,7 +5,7 @@ const btnStart = document.querySelector(".btn-start");
 let cardImage = [];
 const urlImage =
   "https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.";
-
+let pairNumber = [];
 //const cardList = document.querySelector(".showCards__list");
 
 function numberCard() {
@@ -37,7 +37,8 @@ const formatData = data => {
   const searchResult = [];
   for (let i = 0; i < data.length; i = i + 1) {
     searchResult.push({
-      image: data[i].image
+      image: data[i].image,
+      pair: data[i].pair
     });
   }
   console.log(
@@ -58,9 +59,9 @@ const paintCard = () => {
   let htmlCode = "";
   for (let cardIndex = 0; cardIndex < cardImage.length; cardIndex++) {
     htmlCode += `<li class="cards__list-card js-card">
-    <img  class="card__img js-card-img " src="${urlImage}">
-    <img class="card__img js-card-img hidden"
-    src="${cardImage[cardIndex].image}"></li>`;
+    <img  class="card__img back js-card-img " src="${urlImage}">
+    <img class="card__img  front js-card-img hidden"
+    src="${cardImage[cardIndex].image}" data-pair="${cardImage[cardIndex].pair}"></li>`;
   }
   cardList.innerHTML = htmlCode;
   //pruebas
@@ -72,10 +73,14 @@ const paintCard = () => {
 
 //cambio de carta
 function cardClicked(event) {
-  const clickedImage = event.currentTarget.querySelectorAll(".js-card-img");
-  for (const item of clickedImage) {
-    item.classList.toggle("hidden");
-  }
+  const clickedImageBack = event.currentTarget.querySelector(".back");
+  const clickedImageFront = event.currentTarget.querySelector(".front");
+  clickedImageBack.classList.toggle("hidden");
+  clickedImageFront.classList.toggle("hidden");
+
+  //bonus
+  pairNumber.push(clickedImageFront.dataset.pair);
+  console.log(pairNumber);
 }
 
 btnStart.addEventListener("click", getDatafromServer);
