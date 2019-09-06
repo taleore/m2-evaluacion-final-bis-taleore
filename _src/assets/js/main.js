@@ -6,10 +6,8 @@ let cardImage = [];
 const urlImage =
   "https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.";
 let pairNumber = [];
-//const cardList = document.querySelector(".showCards__list");
 
 function numberCard() {
-  //returns number of cards
   for (let i = 0; i < selectNumber.length; i++) {
     if (selectNumber[i].checked) {
       return selectNumber[i].value;
