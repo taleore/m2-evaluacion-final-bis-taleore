@@ -6,7 +6,7 @@ let cardImage = [];
 const urlImage =
   "https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.";
 
-const btnName = document.querySelector(".btn-name");
+let cardName = [];
 
 function numberCard() {
   for (let i = 0; i < selectNumber.length; i++) {
@@ -68,6 +68,10 @@ const paintCard = () => {
   for (const item of cardsArray) {
     item.addEventListener("click", cardClicked);
   }
+
+  const clickbtn = event.currentTarget.querySelector(".btn_name");
+  cardName.push(clickbtn.dataset.name);
+  console.log(cardName);
 };
 
 const paintName = () => {
@@ -78,10 +82,7 @@ const paintName = () => {
   }
   cardName.innerHTML = htmlCode;
 
-  const nameArray = document.querySelector(".cards__list-card");
-  for (const itemName of nameArray) {
-    btnName.addEventListener("click", cardClicked);
-  }
+  console.log(cardName);
 };
 
 function cardClicked(event) {
