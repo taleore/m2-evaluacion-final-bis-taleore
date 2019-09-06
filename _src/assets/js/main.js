@@ -79,6 +79,18 @@ function cardClicked(event) {
   //bonus
   pairNumber.push(clickedImageFront.dataset.pair);
   console.log(pairNumber);
+
+  if (pairNumber.length === 2) {
+    comparePair();
+  }
+
+  function comparePair() {
+    if (pairNumber[0] === pairNumber[1]) {
+      console.log("Bien");
+    } else {
+      console.log("Mal");
+    }
+  }
 }
 
 btnStart.addEventListener("click", getDatafromServer);
