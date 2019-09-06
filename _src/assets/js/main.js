@@ -6,6 +6,8 @@ let cardImage = [];
 const urlImage =
   "https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.";
 
+const btnName = document.querySelector(".btn-name");
+
 function numberCard() {
   for (let i = 0; i < selectNumber.length; i++) {
     if (selectNumber[i].checked) {
@@ -26,6 +28,7 @@ const getDatafromServer = ev => {
       data = formatData(data);
       saveDataIncardImage(data);
       paintCard();
+      paintName();
       localStorage.setItem("numberSelected", cardNumber);
     });
 };
@@ -34,7 +37,8 @@ const formatData = data => {
   const searchResult = [];
   for (let i = 0; i < data.length; i = i + 1) {
     searchResult.push({
-      image: data[i].image
+      image: data[i].image,
+      name: data[i].name
     });
   }
   console.log(
@@ -63,6 +67,20 @@ const paintCard = () => {
   const cardsArray = document.querySelectorAll(".js-card");
   for (const item of cardsArray) {
     item.addEventListener("click", cardClicked);
+  }
+};
+
+const paintName = () => {
+  const cardName = document.querySelector(".showName__list");
+  let htmlCode = "";
+  for (let cardIndex = 0; cardIndex < cardImage.length; cardIndex++) {
+    htmlCode += `<li class="cards__list-card"><p>"${cardImage[cardIndex].name}"></p></li>`;
+  }
+  cardName.innerHTML = htmlCode;
+
+  const nameArray = document.querySelector(".cards__list-card");
+  for (const itemName of nameArray) {
+    btnName.addEventListener("click", cardClicked);
   }
 };
 
