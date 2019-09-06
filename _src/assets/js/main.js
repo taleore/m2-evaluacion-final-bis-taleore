@@ -6,10 +6,7 @@ let cardImage = [];
 const urlImage =
   "https://via.placeholder.com/160x195/30d9c4/ffffff/?text=ADALAB.";
 
-//const cardList = document.querySelector(".showCards__list");
-
 function numberCard() {
-  //returns number of cards
   for (let i = 0; i < selectNumber.length; i++) {
     if (selectNumber[i].checked) {
       return selectNumber[i].value;
@@ -52,7 +49,6 @@ const saveDataIncardImage = data => {
   console.log("Save data in cardImage array >> cardImage", cardImage);
 };
 
-//cardImage[cardIndex].image(para que salgan los pokemon)
 const paintCard = () => {
   const cardList = document.querySelector(".showCards__list");
   let htmlCode = "";
@@ -63,14 +59,13 @@ const paintCard = () => {
     src="${cardImage[cardIndex].image}"></li>`;
   }
   cardList.innerHTML = htmlCode;
-  //pruebas
+
   const cardsArray = document.querySelectorAll(".js-card");
   for (const item of cardsArray) {
     item.addEventListener("click", cardClicked);
   }
 };
 
-//cambio de carta
 function cardClicked(event) {
   const clickedImage = event.currentTarget.querySelectorAll(".js-card-img");
   for (const item of clickedImage) {
@@ -78,11 +73,11 @@ function cardClicked(event) {
   }
 }
 
-btnStart.addEventListener("click", getDatafromServer);
-
 function getLevelFromLocalStorage() {
   const numberSelected = localStorage.getItem("numberSelected");
   const radioToSelect = document.querySelector(`[value="${numberSelected}"]`);
   radioToSelect.checked = true;
 }
 getLevelFromLocalStorage();
+
+btnStart.addEventListener("click", getDatafromServer);
